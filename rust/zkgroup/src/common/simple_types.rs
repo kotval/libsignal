@@ -4,7 +4,7 @@
 //
 
 use crate::common::constants::*;
-use curve25519_dalek::scalar::Scalar;
+use curve25519_dalek_lizard::scalar::Scalar;
 
 pub type AesKeyBytes = [u8; AES_KEY_LEN];
 pub type GroupMasterKeyBytes = [u8; GROUP_MASTER_KEY_LEN];

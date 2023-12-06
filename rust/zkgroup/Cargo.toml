@@ -34,11 +34,7 @@ hkdf = "0.12"
 base64 = { version = "0.21", optional = true }
 rand = { version = "0.8", optional = true }
 
-[dependencies.curve25519-dalek]
-git = 'https://github.com/signalapp/curve25519-dalek'
-tag = 'signal-curve25519-4.0.0'
-features = ["serde"]
-version = "4.0.0"
+curve25519-dalek-lizard = {git = 'https://github.com/signalapp/curve25519-dalek', tag = 'signal-curve25519-4.0.0', features = ["serde"] , version = "4.0.0", package="curve25519-dalek"}
 
 [dev-dependencies]
 # For benchmarking

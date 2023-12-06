@@ -1,3 +1,7 @@
+# This Fork
+
+This fork exists to enable building a binary for inclusion in [xous](https://github.com/betrusted-io/xous-core). This fork will until [https://github.com/signalapp/libsignal/issues/540][] is resolved. The only change is that this will include two versions of curve-25519-dalek, one with the lizard additions and one without. This permits us to patch our version of the crate for hardware acceleration where lizard is not used.
+
 # Overview
 
 libsignal contains platform-agnostic APIs used by the official Signal clients and servers, exposed

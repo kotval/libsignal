@@ -10,7 +10,9 @@
 //! - the user's ACI (provided by the chat server at issuance, passed encrypted to the calling server for verification)
 //! - a timestamp, truncated to day granularity (chosen by the chat server at issuance, passed publicly to the calling server for verification)
 
-use curve25519_dalek::ristretto::RistrettoPoint;
+extern crate curve25519_dalek_lizard;
+
+use curve25519_dalek_lizard::ristretto::RistrettoPoint;
 use partial_default::PartialDefault;
 use poksho::ShoApi;
 use serde::{Deserialize, Serialize};
