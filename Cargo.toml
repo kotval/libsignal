@@ -2,22 +2,22 @@
 members = [
     "rust/attest",
     "rust/crypto",
-    "rust/device-transfer",
+#    "rust/device-transfer", requires swaping our boring TODO
     "rust/media",
-    "rust/net",
+#    "rust/net", uses tokio. Should look to see what is useful TODO
     "rust/pin",
     "rust/poksho",
     "rust/protocol",
     "rust/usernames",
     "rust/zkcredential",
     "rust/zkgroup",
-    "rust/bridge/ffi",
-    "rust/bridge/jni",
-    "rust/bridge/node",
+#    "rust/bridge/ffi", unnecessary for our use
+#    "rust/bridge/jni", android specific
+#    "rust/bridge/node", node specific
 ]
 default-members = [
     "rust/crypto",
-    "rust/device-transfer",
+#    "rust/device-transfer",
     "rust/media",
     "rust/pin",
     "rust/poksho",
@@ -30,8 +30,10 @@ resolver = "2" # so that our dev-dependency features don't leak into products
 
 [patch.crates-io]
 # Use our fork of curve25519-dalek for zkgroup support.
+# Note: this will have poor performance on xous. Currently working on supporting our version in in branch xous-support
 curve25519-dalek = { git = 'https://github.com/signalapp/curve25519-dalek', tag = 'signal-curve25519-4.0.0' }
-boring = { git = 'https://github.com/signalapp/boring', branch = 'libsignal' }
+#boring = { git = 'https://github.com/signalapp/boring', branch = 'libsignal' }
+getrandom = {path = "../xous-core/imports/getrandom"}
 
 [profile.dev.package.argon2]
 opt-level = 2 # signal-signal-pin unit tests are too slow with an unoptimized argon2

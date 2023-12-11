@@ -38,6 +38,9 @@ pqcrypto-kyber = { version = "0.7.6", default-features = false, features = ["std
 pqcrypto-ml-kem = { version = "0.8.0", default-features = false, features = ["std"], package = "pqcrypto-kyber" }
 pqcrypto-traits = "0.3.4"
 
+[patch.crates-io]
+errno = {version="^0.3.8",default-features=false}
+
 [features]
 kyber768 = []
 # ML-KEM matches the NIST standard version of Kyber. It may still change
@@ -46,11 +49,11 @@ kyber768 = []
 mlkem1024 = []
 
 [dev-dependencies]
-criterion = "0.5"
+#criterion = "0.5"
 hex-literal = "0.4.1"
 proptest = "1.0"
 futures-util = "0.3.7"
-env_logger = "0.10.0"
+#env_logger = "0.10.0"
 
 [build-dependencies]
 prost-build = "0.12"
