@@ -10,7 +10,7 @@ members = [
     "rust/protocol",
     "rust/usernames",
     "rust/zkcredential",
-    "rust/zkgroup",
+#    "rust/zkgroup", working towards supporting this in xous-support branch
 #    "rust/bridge/ffi", unnecessary for our use
 #    "rust/bridge/jni", android specific
 #    "rust/bridge/node", node specific
@@ -24,14 +24,14 @@ default-members = [
     "rust/protocol",
     "rust/usernames",
     "rust/zkcredential",
-    "rust/zkgroup",
+#    "rust/zkgroup",
 ]
 resolver = "2" # so that our dev-dependency features don't leak into products
 
 [patch.crates-io]
 # Use our fork of curve25519-dalek for zkgroup support.
 # Note: this will have poor performance on xous. Currently working on supporting our version in in branch xous-support
-curve25519-dalek = { git = 'https://github.com/signalapp/curve25519-dalek', tag = 'signal-curve25519-4.0.0' }
+#curve25519-dalek = { git = 'https://github.com/signalapp/curve25519-dalek', tag = 'signal-curve25519-4.0.0' }
 #boring = { git = 'https://github.com/signalapp/boring', branch = 'libsignal' }
 getrandom = {path = "../xous-core/imports/getrandom"}
 
